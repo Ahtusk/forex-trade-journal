@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="register-container">
+
+    <div class="register-card">
+
+        <div class="register-logo">📈</div>
+
+        <h1>Create Account</h1>
+
+        <p class="register-subtitle">
+            Start your trading journey and access your personal trade dashboard
+        </p>
+
+        <!-- Flash Message -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash-message">
+                    {{ messages[0] }}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+
+            <div class="input-box">
+                <span class="input-icon">👤</span>
+                <input type="text"
+                       name="fullname"
+                       placeholder="Full Name"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <span class="input-icon">📧</span>
+                <input type="email"
+                       name="email"
+                       placeholder="Enter Email"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <span class="input-icon">🔒</span>
+                <input type="password"
+                       name="password"
+                       placeholder="Create Password"
+                       required>
+            </div>
+
+            <button type="submit" class="register-btn">
+                🚀 Create Account
+            </button>
+
+        </form>
+
+        <div class="register-footer">
+            Already have an account?
+            <a href="/">Login Now</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

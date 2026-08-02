@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forex Trade Journal - Login</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="login-container">
+
+    <div class="login-card">
+
+        <!-- Logo -->
+        <div class="register-logo">📈</div>
+
+        <!-- Heading -->
+        <h1>Forex Trade Journal</h1>
+
+        <p class="subtitle">
+            Login to access your trading dashboard
+        </p>
+
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash-message">
+                    {{ messages[0] }}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <!-- Login Form -->
+        <form method="POST" autocomplete="on">
+
+            <div class="input-box">
+                <span class="input-icon">📧</span>
+
+                <input type="email"
+                       name="email"
+                       placeholder="Enter Email"
+                       autocomplete="email"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <span class="input-icon">🔒</span>
+
+                <input type="password"
+                       name="password"
+                       placeholder="Enter Password"
+                       autocomplete="current-password"
+                       required>
+            </div>
+
+            <button type="submit" class="register-btn">
+                🚀 Login
+            </button>
+
+        </form>
+
+        <!-- Links -->
+        <div class="links">
+
+            <a href="/register">Create Account</a>
+
+            <a href="/forgot_password">Forgot Password?</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

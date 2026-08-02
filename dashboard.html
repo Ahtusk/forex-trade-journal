@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forex Trade Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="dashboard-wrapper">
+
+    <!-- Header -->
+    <div class="dashboard-header">
+
+        <h1 class="dashboard-title">
+            📊 Forex Trade Dashboard
+        </h1>
+
+        <p class="dashboard-subtitle">
+            Manage your daily trades and improve your consistency
+        </p>
+
+    </div>
+
+    <!-- Cards -->
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-icon">📈</div>
+            <h2>{{ total_trades }}</h2>
+            <p>Total Trades</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🏆</div>
+            <h2>{{ winning_trades }}</h2>
+            <p>Winning Trades</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">📉</div>
+            <h2>{{ losing_trades }}</h2>
+            <p>Losing Trades</p>
+        </div>
+
+        <div class="card profit-card">
+            <div class="card-icon">💰</div>
+            <h2>${{ total_profit }}</h2>
+            <p>Total Profit</p>
+        </div>
+
+        <div class="card winrate-card">
+            <div class="card-icon">🎯</div>
+            <h2>{{ win_rate }}%</h2>
+            <p>Win Rate</p>
+        </div>
+
+    </div>
+
+    <!-- Buttons -->
+    <div class="dashboard-buttons">
+
+        <a href="/journal" class="dashboard-btn">
+            ➕ Open Trade Journal
+        </a>
+
+        <a href="/logout"
+           class="dashboard-btn logout-btn">
+            🚪 Logout
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

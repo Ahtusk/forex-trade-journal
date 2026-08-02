@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Journal</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="journal-wrapper">
+
+    <!-- Header -->
+    <div class="journal-header">
+
+        <h1 class="journal-title">
+            📒 Trade Journal
+        </h1>
+
+        <p class="journal-subtitle">
+            Record your trades, mistakes, and daily trading performance
+        </p>
+
+    </div>
+
+    <!-- Journal Form -->
+    <div class="journal-card">
+
+        <form method="POST" class="trade-form">
+
+            <!-- Date -->
+            <div class="input-box">
+                <span class="input-icon">📅</span>
+
+                <input type="date"
+                       name="trade_date"
+                       required>
+            </div>
+
+            <!-- Pair -->
+            <div class="input-box">
+                <span class="input-icon">💱</span>
+
+                <input type="text"
+                       name="pair_name"
+                       placeholder="Pair Name (e.g. XAUUSD)"
+                       required>
+            </div>
+
+            <!-- Buy / Sell -->
+            <div class="input-box">
+                <span class="input-icon">📊</span>
+
+                <input type="text"
+                       name="trade_type"
+                       placeholder="BUY or SELL"
+                       required>
+            </div>
+
+            <!-- Mistake -->
+            <div class="input-box">
+                <span class="input-icon">❌</span>
+
+                <input type="text"
+                       name="mistake"
+                       placeholder="Trading Mistake"
+                       required>
+            </div>
+
+            <!-- Profit / Loss -->
+            <div class="input-box">
+                <span class="input-icon">💰</span>
+
+                <input type="number"
+                       step="0.01"
+                       name="amount"
+                       placeholder="Profit or Loss (e.g. 50 or -20)"
+                       required>
+            </div>
+
+            <button type="submit" class="register-btn">
+                ➕ Save Trade
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- Trade History -->
+    <div class="table-card">
+
+        <h2>📈 Trade History</h2>
+
+        <table>
+
+            <tr>
+                <th>Date</th>
+                <th>Pair</th>
+                <th>Type</th>
+                <th>Mistake</th>
+                <th>Profit / Loss</th>
+            </tr>
+
+            {% for trade in trades %}
+
+            <tr>
+
+                <td>{{ trade[0] }}</td>
+
+                <td>{{ trade[1] }}</td>
+
+                <td>{{ trade[2] }}</td>
+
+                <td>{{ trade[3] }}</td>
+
+                <td class="{% if trade[4] > 0 %}profit-text{% else %}loss-text{% endif %}">
+                    ${{ trade[4] }}
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+    <!-- Buttons -->
+    <div class="dashboard-buttons">
+
+        <a href="/dashboard" class="dashboard-btn">
+            📊 Back to Dashboard
+        </a>
+
+        <a href="/logout" class="dashboard-btn logout-btn">
+            🚪 Logout
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
