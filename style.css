@@ -1,0 +1,419 @@
+/* ===== Reset ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== Body ===== */
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#050816,#0b1220,#111827);
+    color:white;
+    padding:20px;
+}
+
+/* ===== Login / Register / Forgot Password ===== */
+
+.login-container,
+.register-container{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-card,
+.register-card{
+    width:420px;
+    background:rgba(22,27,34,0.95);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:28px;
+    padding:45px 35px;
+    backdrop-filter:blur(14px);
+    box-shadow:0 20px 45px rgba(0,0,0,0.45);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.login-card::before,
+.register-card::before{
+    content:"";
+    position:absolute;
+    top:-50px;
+    right:-50px;
+    width:120px;
+    height:120px;
+    background:linear-gradient(135deg,#00ff88,#00d4ff);
+    border-radius:50%;
+    opacity:0.15;
+}
+
+.login-card h1,
+.register-card h1{
+    font-size:38px;
+    margin-bottom:10px;
+    background:linear-gradient(90deg,#00ff88,#00d4ff,#8b5cf6);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    font-weight:800;
+}
+
+.register-logo{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.subtitle,
+.register-subtitle{
+    color:#9ca3af;
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:30px;
+}
+
+/* ===== Flash Message ===== */
+
+.flash-message{
+    background:#331313;
+    color:#ff6b6b;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:20px;
+    border:1px solid #ff6b6b;
+    font-size:14px;
+}
+
+/* ===== Input Fields ===== */
+
+.input-group,
+.input-box{
+    margin-bottom:18px;
+    position:relative;
+}
+
+.input-icon{
+    position:absolute;
+    left:15px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:18px;
+}
+
+.input-group input{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#21262d;
+    color:white;
+    font-size:15px;
+    transition:0.3s;
+}
+
+.input-box input{
+    width:100%;
+    padding:15px 15px 15px 48px;
+    border:none;
+    border-radius:14px;
+    background:#21262d;
+    color:white;
+    font-size:15px;
+    transition:0.3s;
+}
+
+.input-group input:focus,
+.input-box input:focus{
+    outline:none;
+    border:2px solid #00ff88;
+    box-shadow:0 0 12px rgba(0,255,136,0.35);
+}
+
+/* ===== Buttons ===== */
+
+.login-btn,
+.register-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(90deg,#00c853,#00ff88);
+    color:white;
+    font-size:17px;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 10px 25px rgba(0,255,136,0.25);
+}
+
+.login-btn:hover,
+.register-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 30px rgba(0,255,136,0.4);
+}
+
+/* ===== Links ===== */
+
+.links{
+    margin-top:20px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.links a,
+.register-footer a{
+    color:#00d4ff;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+}
+
+.links a:hover,
+.register-footer a:hover{
+    text-decoration:underline;
+}
+
+.register-footer{
+    margin-top:25px;
+    color:#9ca3af;
+    font-size:14px;
+}
+
+/* ===== Dashboard ===== */
+
+.dashboard-wrapper{
+    width:100%;
+    min-height:100vh;
+    padding:40px 20px;
+    background:linear-gradient(135deg,#050816,#0b1220,#111827);
+}
+
+.dashboard-header{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.dashboard-title{
+    font-size:54px;
+    font-weight:800;
+    background:linear-gradient(90deg,#00ff88,#00d4ff,#8b5cf6);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:12px;
+}
+
+.dashboard-subtitle{
+    color:#9ca3af;
+    font-size:18px;
+}
+
+/* ===== Dashboard Cards ===== */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(22,27,34,0.95);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:24px;
+    padding:35px 25px;
+    text-align:center;
+    backdrop-filter:blur(12px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.35);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#00ff88;
+    box-shadow:0 20px 40px rgba(0,255,136,0.15);
+}
+
+.card-icon{
+    font-size:44px;
+    margin-bottom:15px;
+}
+
+.card h2{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:10px;
+    color:#00ff88;
+}
+
+.card p{
+    color:#d1d5db;
+    font-size:16px;
+}
+
+.profit-card h2{
+    color:#22c55e;
+}
+
+.winrate-card h2{
+    color:#00d4ff;
+}
+
+/* ===== Dashboard Buttons ===== */
+
+.dashboard-buttons{
+    text-align:center;
+    margin-top:45px;
+}
+
+.dashboard-btn{
+    display:inline-block;
+    padding:16px 34px;
+    margin:10px;
+    border-radius:14px;
+    text-decoration:none;
+    font-size:17px;
+    font-weight:700;
+    color:white;
+    background:linear-gradient(90deg,#00c853,#00ff88);
+    box-shadow:0 10px 20px rgba(0,200,83,0.3);
+    transition:0.3s;
+}
+
+.dashboard-btn:hover{
+    transform:scale(1.05);
+}
+
+.logout-btn{
+    background:linear-gradient(90deg,#ef4444,#dc2626);
+    box-shadow:0 10px 20px rgba(239,68,68,0.3);
+}
+
+/* ===== Journal Advanced ===== */
+
+.journal-wrapper{
+    width:100%;
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+
+.journal-header{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.journal-title{
+    font-size:52px;
+    font-weight:800;
+    background:linear-gradient(90deg,#00ff88,#00d4ff,#8b5cf6);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:10px;
+}
+
+.journal-subtitle{
+    color:#9ca3af;
+    font-size:17px;
+}
+
+.journal-card,
+.table-card{
+    background:rgba(22,27,34,0.95);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:24px;
+    padding:30px;
+    margin-bottom:30px;
+    backdrop-filter:blur(12px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.35);
+}
+
+.table-card h2{
+    margin-bottom:20px;
+    color:#ffffff;
+    font-size:24px;
+}
+
+/* ===== Table ===== */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:16px;
+}
+
+table th{
+    background:#21262d;
+    color:#00ff88;
+    padding:15px;
+    font-size:15px;
+    text-transform:uppercase;
+}
+
+table td{
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #30363d;
+    color:#ffffff;
+}
+
+table tr:hover{
+    background:rgba(255,255,255,0.03);
+}
+
+/* ===== Profit & Loss Colors ===== */
+
+.profit-text{
+    color:#22c55e;
+    font-weight:700;
+}
+
+.loss-text{
+    color:#ef4444;
+    font-weight:700;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width:768px){
+
+    .dashboard-title,
+    .journal-title{
+        font-size:34px;
+    }
+
+    .dashboard-subtitle,
+    .journal-subtitle{
+        font-size:15px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .login-card,
+    .register-card{
+        width:100%;
+        padding:30px 20px;
+    }
+
+    .journal-card,
+    .table-card{
+        padding:20px;
+    }
+
+    table th,
+    table td{
+        padding:10px;
+        font-size:13px;
+    }
+
+    .links{
+        flex-direction:column;
+        gap:10px;
+    }
+}
